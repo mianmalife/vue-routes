@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <router-link to="/"> Go to Foo</router-link><br>
-    <router-link to="/bar">Go to Bar</router-link><br>
+      <router-link to="/bar">Go to Bar</router-link>
+    <br>
     <router-link :to="{ name: 'user', params: { id: 123, nam: 'zhangkx'}}">user</router-link><br>
     <router-link to="/phone/15591523164/query">userquery</router-link><br>
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
     <router-view name="test_view_name"></router-view>
   </div>
 </template>
