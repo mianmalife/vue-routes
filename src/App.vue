@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/"> Go to Foo</router-link><br>
+    <router-link to="/bar">Go to Bar</router-link><br>
+    <router-link :to="{ name: 'user', params: { id: 123, nam: 'zhangkx'}}">user</router-link><br>
+    <router-link to="/phone/15591523164/query">userquery</router-link><br>
+    <router-view></router-view>
+    <router-view name="test_view_name"></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      user_name: 'zhangkx'
+    }
+  },
+  created() {
+
   }
 }
 </script>
